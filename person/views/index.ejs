@@ -1,0 +1,13 @@
+<html>
+    <body>
+        <h1>목록</h1>
+        <ul>
+            <% people.forEach((person) => { %>
+                <li>
+                    <a href="/<%= person._id %>"><%= person.name %></a>
+                </li>
+            <% }) %>
+        </ul>
+        <a href="/create">추가</a>
+    </body>
+</html>
