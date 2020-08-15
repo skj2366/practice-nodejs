@@ -1,0 +1,13 @@
+<html>
+    <body>
+        <form action="/update/<%= person._id %>" method="POST">
+            <div>
+                이름: <input type="text" name="name" value="<%= person.name %>">
+            </div>
+            <div>
+                나이: <input type="text" name="age" value="<%= person.age %>">
+            </div>
+            <div><button>submit</button></div>
+        </form>
+    </body>
+</html>

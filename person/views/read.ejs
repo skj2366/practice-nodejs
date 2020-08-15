@@ -3,5 +3,7 @@
         <h1>이름: <%= person.name %></h1>
         <h2>나이: <%= person.age %></h2>
         <a href="/">돌아가기</a>
+        <a href="/delete/<%= person._id %>">삭제</a>
+        <a href="/update/<%= person._id %>">변경</a>
     </body>
 </html>

@@ -45,11 +45,35 @@ app.post('/create', (req, res) => {
 });
 
 app.get('/:id', (req,res) => {
-    alert(req);
+    // alert(req);
     Person.findOne({ _id: req.params.id }, (err, person) => {
         if(err) return res.json(err);
         res.render('read', { person: person });
     });
+});
+
+app.get('/delete/:id', (req, res) => {
+    Person.deleteOne({ _id: req.params.id }, (err, person) => {
+        if(err) return res.json(err);
+        res.redirect('/');
+    });
+});
+
+app.get('/update/:id', (req, res) => {
+    Person.findOne({ _id: req.params.id }, (err, person) => {
+        if(err) return res.json(err);
+        res.render('update', { person: person });
+    });
+});
+
+app.post('/update/:id', (req, res) => {
+    Person.updateOne(
+        { _id: req.params.id },
+        { $set: { name: req.body.name, age: req.body.age } },
+        (err, person) => {
+            if(err) return res.json(err);
+            res.redirect('/');
+        });
 });
 
 app.listen(3000, () => {
