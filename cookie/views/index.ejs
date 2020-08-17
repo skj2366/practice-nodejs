@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/" method="post">
+        <input type="text" id="favorite" name="favorite" placeholder="좋아하는 맛" />
+        <input type="submit" />
+    </form>
+    <% if(favorite) { %>
+        <%= favorite %>
+    <% } else { %>
+        Not Cookie
+    <% } %>
+</body>
+</html>
